@@ -1,0 +1,27 @@
+{
+  "name": "homemade-summer-camp",
+  "version": "1.0.0",
+  "description": "Summer Camp for parents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsemoin/Homemade-Summer-Camp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dsemoin/Homemade-Summer-Camp/issues"
+  },
+  "homepage": "https://github.com/dsemoin/Homemade-Summer-Camp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "pug": "^2.0.3",
+    "sequelize": "^4.37.7"
+  }
+}
