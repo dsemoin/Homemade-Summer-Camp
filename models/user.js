@@ -1,10 +1,9 @@
-export default function(sequelize, DataTypes) {
+var bcrypt = require('bcrypt');
+module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
             validate: {
-                notEmpty: true,
                 len: [1, 50]
             }
         },
@@ -24,8 +23,54 @@ export default function(sequelize, DataTypes) {
             validate: {
                 notEmpty: true
             }
-        }
-    });
+        } 
+              
+      // },
+      //  {
+      //   freezeTableName: true,
+      //   instanceMethods: {
+      //       generateHash(password) {
+      //           return bcrypt.hash(password, bcrypt.genSaltSync(8));
+      //       },
+      //       validPassword(password) {
+      //           return bcrypt.compare(password, this.password);
+      //       }
+      //    }
+     });
+
+    User.beforeCreate((user, options) => {
+
+    return bcrypt.hash(user.password, 10)
+        .then(hash => {
+            user.password = hash;
+        })
+        .catch(err => { 
+            throw new Error(); 
+        });
+});
+
+    // var hasSecurePassword = function(user, options, callback) {
+
+    // if (user.password != user.password_confirmation) {
+    //     throw new Error("Password confirmation doesn't match Password");
+    // }
+
+    // var salt = bcrypt.genSaltSync(saltRounds);
+    // var hash = bcrypt.hashSync(myPlaintextPassword, salt);
+    
+    // user.set('password_digest', hash);
+        
+    // };
+
+
+    // User.beforeCreate(function(user, options, callback) {
+    //     user.email = user.email.toLowerCase();
+    //     if (user.password)
+    //         hasSecurePassword(user, options, callback);
+    //     else
+    //         return callback(null, options);
+    // });
+
     User.associate = function(models) {
 
         User.hasMany(models.Task, {
