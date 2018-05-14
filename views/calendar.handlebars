@@ -84,7 +84,7 @@ function fill_table(month, month_length, indexMonth) {
 
 {{!-- calendar --}}
 
-<header>
+<header class="body-calendar">
   <div class="wrapper">
     <div class="c-monthyear">
     <div class="c-month">
@@ -108,14 +108,14 @@ function fill_table(month, month_length, indexMonth) {
       <span class="c-paginator__year">2017</span>
     </div>
     <div class="c-sort">
-      <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
+      <a class="o-btn c-today__btn" href="#" onclick="TODAY()">TODAY</a>
     </div>
   </div>
 </header>
-<div class="wrapper">
+<div class="wrapper body-calendar">
   <div class="c-calendar">
     <div class="c-calendar__style c-aside">
-      <a class="c-add o-btn js-event__add" href="javascript:;">add event <span class="fa fa-plus"></span></a>
+      <a class="c-add o-btn" href="#" data-toggle="modal" data-target="#exampleModal">add event <span class="fa fa-plus"></span></a>
       <div class="c-aside__day">
         <span class="c-aside__num"></span> <span class="c-aside__month"></span>
       </div>
@@ -126,7 +126,8 @@ function fill_table(month, month_length, indexMonth) {
       <script>
       
       // CAHNGE the below variable to the CURRENT YEAR
-      year = 2017;
+      year = (new Date()).getFullYear();
+      console.log(year);
 
       // first day of the week of the new year
       today = new Date("January 1, " + year);
@@ -147,9 +148,17 @@ function fill_table(month, month_length, indexMonth) {
     </div>
   </div>
 
-  <div class="c-event__creator c-calendar__style js-event__creator">
-    <a href="javascript:;" class="o-btn js-event__close">CLOSE <span class="fa fa-close"></span></a>
-    <form id="addEvent">
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a href="#" class="o-btn" data-dismiss="modal">CLOSE <span class="fa fa-close"></span></a>
+      </div>
+      <div class="modal-body">
+        <div class="c-calendar__style">
+    
+     <form id="addEvent">
       <input placeholder="Event name" type="text" name="name">
       <input type="date" name="date">
       <textarea placeholder="Notes" name="notes" cols="30" rows="10"></textarea>
@@ -161,8 +170,12 @@ function fill_table(month, month_length, indexMonth) {
         </select>
     </form>
     <br>
-    <a href="javascript:;" class="o-btn js-event__save">SAVE <span class="fa fa-save"></span></a>
+    <a href="#" class="o-btn js-event__save"  data-dismiss="modal">SAVE <span class="fa fa-save"></span></a>
   </div>
+      </div>
+     </div>
+  </div>
+</div>
 </div>
 
 {{!-- end calendar --}}

@@ -20,7 +20,7 @@ var monthText = [
   "December"
 ];
 var indexMonth = month;
-var todayBtn = $(".c-today__btn");
+// var todayBtn = $(".c-today__btn");
 var addBtn = $(".js-event__add");
 var saveBtn = $(".js-event__save");
 var closeBtn = $(".js-event__close");
@@ -39,15 +39,14 @@ function defaultEvents(dataDay,dataName,dataNotes,classTag){
 }
 
 defaultEvents(today, 'YEAH!','Today is your day','important');
-defaultEvents('2017-12-25', 'MERRY CHRISTMAS','A lot of gift!!!!','festivity');
-defaultEvents('2017-05-04', "LUCA'S BIRTHDAY",'Another gifts...?','birthday');
-defaultEvents('2017-03-03', "MY LADY'S BIRTHDAY",'A lot of money to spent!!!!','birthday');
+
 
 
 // ------ functions control -------
 
 //button of the current day
-todayBtn.on("click", function() {
+function TODAY() {
+  alert("estoy");
   if (month < indexMonth) {
     var step = indexMonth % month;
     movePrev(step, true);
@@ -55,7 +54,7 @@ todayBtn.on("click", function() {
     var step = month - indexMonth;
     moveNext(step, true);
   }
-});
+};
 
 //higlight the cel of current day
 dataCel.each(function() {
