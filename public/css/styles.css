@@ -74,7 +74,7 @@ body {
   border: 1px solid black;
   padding: 28px;
   min-height: 376px;
-  min-width: 568px  
+  min-width: 568px
 }
 
 .lessons {
@@ -90,4 +90,8 @@ body {
 
 .tag {
   padding: 5px;
+}
+
+.delete {
+  display: inline;
 }
