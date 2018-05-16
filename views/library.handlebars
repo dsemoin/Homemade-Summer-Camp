@@ -13,11 +13,14 @@
         <div class="row">
             <div class="lessons">
                 <ul>
-                    {{!-- get array for each item in library --}} {{#each library}}
+                    {{!-- get array for each item in library --}} {{#each lessons}}
                     <li>
                         <a href="{{url}}">
                             {{title}}
                         </a>
+                        <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">X</button>
+                        </form>
                     </li>
                     {{/each}}
                 </ul>
@@ -34,11 +37,14 @@
         <div class="row">
             <div class="activities">
                 <ul>
-                    {{!-- get array for each item in library --}} {{#each library}}
+                    {{!-- get array for each item in library --}} {{#each fieldTrips}}
                     <li>
                         <a href="{{url}}">
                             {{title}}
                         </a>
+                        <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">X</button>
+                        </form>
                     </li>
                     {{/each}}
                 </ul>
@@ -77,6 +83,7 @@
                 <input type="text" id="ca" name="title">
                 <label for="url">Website:</label>
                 <input type="text" id="url" name="url">
+                <input type="hidden" name="field_trip" value="true">
                 <button type="submit" class="btn btn-primary">Add an activity</button>
                 <button type="Delete" class="btn btn-danger">Delete an activity</button>
             </div>

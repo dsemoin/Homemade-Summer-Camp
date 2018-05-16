@@ -4,19 +4,6 @@ module.exports = function (app) {
     app.post("/api/library", function (req, res) {
         console.log(req.body);
     //   line 8-18 might break code **
-    // This is to delete a posting
-            if (req.body._method === "DELETE") {
-              db.Library.destroy({
-                where: {
-                title: req.body.title,
-                url:req.body.url,
-                field_trip:req.body.field_trip
-                }
-              }).then(function (result) {
-                // Send the data to the database
-                res.redirect('/library');
-              });
-            } else {
         db.Library.create({
             title: req.body.title,
             url: req.body.url,
@@ -24,18 +11,30 @@ module.exports = function (app) {
         }).then(function (result) {
             res.redirect('/library');
         });
-    }
     });
 
-    // Create all routes and set up logic 
+    // Create all routes and set up logic
     app.get("/library", function (req, res) {
         db.Library.findAll().then(function (data) {
             console.log(data);
             var hbsObject = {
-               library: data
+              lessons: data.filter(activity => activity.field_trip === false),
+              fieldTrips: data.filter(activity => activity.field_trip)
             };
             console.log(hbsObject);
             res.render("library", hbsObject);
+        });
+    });
+
+    app.post("/api/library/:id", function (req, res) {
+    // This is to delete a posting
+        db.Library.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function (result) {
+          // Send the data to the database
+          res.redirect('/library');
         });
     });
 };
