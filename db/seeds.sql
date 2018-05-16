@@ -1,0 +1,93 @@
+-- Write insert queries to populate burgers Libraries
+INSERT INTO Libraries (title, url) VALUES ('Sky Zone Fort Lauderdale', 'https://www.skyzone.com/');
+INSERT INTO Libraries (title, url) VALUES ('Rapids Water Park', 'https://www.rapidswaterpark.com/');
+INSERT INTO Libraries  (title, url) VALUES ('Action Park', 'https://xtremeactionpark.com/');
+
+
+
+--  <a href="http://www.youngatartmuseum.org/">
+--                     <div class="tag">Young at Art Museum</div>
+--                 </a>
+--                 <a href="https://www.rapidswaterpark.com/">
+--                     <div class="tag">Parking at Rapids Water Park</div>
+--                 </a>
+--                 <a href="https://xtremeactionpark.com/">
+--                     <div class="tag">Xtreme Action Park</div>
+--                 </a>
+--                 <a href="http://monsterminigolf.com/">
+--                     <div class="tag">Monster Mini Golf</div>
+--                 </a>
+--                 <a href="https://www.evergladestours.com/">
+--                     <div class="tag">Sawgrass Recreation Park</div>
+--                 </a>
+--                 <a href="https://www.lioncountrysafari.com/">
+--                     <div class="tag">Lion Country Safari</div>
+--                 </a>
+--                 <a href="http://www.monkeyjoes.com/">
+--                     <div class="tag">Monkey Joe's</div>
+--                 </a>
+--                 <a href="http://www.brunswickbowling.com/home/">
+--                     <div class="tag">Brunswick Bowling</div>
+--                 </a>
+--                 <a href="https://www.gameroomsawgrass.com/">
+--                     <div class="tag">GameRoom</div>
+--                 </a>
+--                 <a href="https://www.laserquest.com/">
+--                     <div class="tag">Party at Laser Quest</div>
+--                 </a>
+--                 <a href="https://www.equinenow.com/farm-id-593340.htm">
+--                     <div class="tag">Double Flush Stables, LLC</div>
+--                 </a>
+--             </div>
+-- {{!-- break down field trip column to look better --}}
+--             <div class="col">
+--                 {{!-- <a href="https://www.skyzone.com/">
+--                     <div class="tag">Sky Zone Fort Lauderdale</div>
+--                 </a>
+--                 <a href="http://wowfactoryfun.com/wow-alley-bowling/">
+--                     <div class="tag">The Wow Alley</div>
+--                 </a>
+--                 <a href="https://www.frostscience.org/">
+--                     <div class="tag">Frost Museum of Science</div>
+--                 </a>
+--                 <a href="https://www.miamiseaquarium.com/">
+--                     <div class="tag">Miami Seaquarium</div>
+--                 </a>
+--                 <a href="http://www.jumpzoneparty.com/Birthday-Party-for-Kids.php?jzpcity=Sunrise&jzpid=027">
+--                     <div class="tag">Jump!Zone</div>
+--                 </a>
+--                 <a href="https://www.butterflyworld.com/">
+--                     <div class="tag">Butterfly World</div>
+--                 </a>
+--                 <a href="https://www.gumbolimbo.org/">
+--                     <div class="tag">Gumbo Limbo</div>
+--                 </a>
+--                 <a href="http://margatefl.com/528/Calypso-Cove">
+--                     <div class="tag">Calypso-Cove</div>
+--                 </a>
+--                 <a href="http://discover.pbcgov.org/parks/Pages/Waterparks.aspx">
+--                     <div class="tag">Coconut Cove Water Park</div>
+--                 </a>
+--                 <a href="https://mods.org/">
+--                     <div class="tag">Museum of Discovery and Science</div>
+--                 </a> --}}
+
+--   {{!-- <a href="https://dsemoin.github.io/week-4-game/">
+--                     <div class="tag">Crystal Collectors Game</div>
+--                 </a>
+--                 <a href="https://www.education.com/activity/science/">
+--                     <div class="tag">Science Activities</div>
+--                 </a>
+--                 <a href="https://www.education.com/activity/math/">
+--                     <div class="tag">Math Activities</div>
+--                 </a>
+--                 <a href="http://www.pbs.org/parents/education/reading-language/reading-activities/reading-activities-at-home/">
+--                     <div class="tag">Reading Activities</div>
+--                 </a>
+--                 <a href="https://www.education.com/activity/social-studies/">
+--                     <div class="tag">Social Activities</div>
+--                 </a>
+--                 <a href="https://www.fluentu.com/blog/educator-french/teaching-french-to-elementary-students/">
+--                     <div class="tag">Language Learning tips</div>
+--                 </a>
+--                 <br> --}}
