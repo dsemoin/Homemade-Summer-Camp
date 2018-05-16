@@ -18,8 +18,4 @@ module.exports = function(app) {
     	res.render('calendar');
     });
 
-    app.get('/library', function(req, res){
-    	res.render('library');
-    });
-
 }
