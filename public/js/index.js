@@ -183,7 +183,7 @@ dataCel.each(function() {
 });
 
 }
-location.reload();
+
   winCreator.removeClass("isVisible");
   $("body").removeClass("overlay");
   $("#addEvent")[0].reset();

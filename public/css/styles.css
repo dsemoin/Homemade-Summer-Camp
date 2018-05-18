@@ -14,15 +14,16 @@ body {
 }
 
 nav{
-  font-size: 18px;
+  font-size: 22px;
 }
 
 #signUp{
-  font-size: 18px;
+  font-size: 22px;
 }
 
 h5{
-  font-size: 22px;
+  font-size: 30px;
+  font-family: 'Skranji', cursive;
 }
 
 .form-signin {
@@ -67,4 +68,9 @@ h1{
   color: lightblue !important;
   font-family: fantasy !important;
   text-align: center!important
+}
+
+#signUp:hover{
+background-color: #003567 !important;
+color: white!important
 }

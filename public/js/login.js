@@ -1,5 +1,7 @@
 $(function() {
 
+
+//function login
  $(".login").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -8,8 +10,6 @@ $(function() {
 		 email:$("#inputEmail").val().trim(),
 		password:$("#inputPassword").val().trim(),
 	}
-				
-console.log("user: "+ userN);
 		$.post("/api/login", userN).then(function(data){
 			if(data==null){
 			alert("Incorrect credentials or your need to create an new user!");
@@ -28,7 +28,7 @@ console.log("user: "+ userN);
 	});
 });
 
- 
+ //funtion register
  $(".register").on("submit", function(event) {
  // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -60,6 +60,11 @@ console.log("user: "+ userN);
 		$("#inputName").val("");
 		$("#inputEmail").val("");
         $("#inputPassword").val("");
-      });
+	  });
+	  
+	  $("#signUp").on("click", function(event){
+		event.preventDefault();
+		window.location.href = "/";
+	  })
 
 });
