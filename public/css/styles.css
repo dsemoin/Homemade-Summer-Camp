@@ -31,6 +31,7 @@ h5{
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  margin-top: 150px;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -65,7 +66,7 @@ h5{
 }
 
 h1{
-  color: lightblue !important;
+  color: #003567 !important;
   font-family: fantasy !important;
   text-align: center!important
 }
@@ -73,4 +74,8 @@ h1{
 #signUp:hover{
 background-color: #003567 !important;
 color: white!important
+}
+
+nav a:hover{
+ text-decoration: none
 }
