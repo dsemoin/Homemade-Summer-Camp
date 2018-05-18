@@ -13,11 +13,14 @@
         <div class="row">
             <div class="lessons">
                 <ul>
-                    {{!-- get array for each item in library --}} {{#each library}}
+                    {{!-- get array for each item in library --}} {{#each lessons}}
                     <li>
                         <a href="{{url}}">
                             {{title}}
                         </a>
+                         <form action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                        </form>
                     </li>
                     {{/each}}
                 </ul>
@@ -34,11 +37,14 @@
         <div class="row">
             <div class="activities">
                 <ul>
-                    {{!-- get array for each item in library --}} {{#each library}}
+                    {{!-- get array for each item in library --}} {{#each fieldTrips}}
                     <li>
                         <a href="{{url}}">
                             {{title}}
                         </a>
+                         <form action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                        </form>
                     </li>
                     {{/each}}
                 </ul>
@@ -60,7 +66,7 @@
                 <input type="text" id="url" name="url">
                 <input type="hidden" name="field_trip" value="false">
                 <button type="submit" class="btn btn-primary">Add a lesson</button>
-                <button type="Delete" class="btn btn-danger">Delete a lesson</button>
+               
             </div>
         </form>
     </div>
@@ -77,8 +83,9 @@
                 <input type="text" id="ca" name="title">
                 <label for="url">Website:</label>
                 <input type="text" id="url" name="url">
+                <input type="hidden" name="field_trip" value="true">
                 <button type="submit" class="btn btn-primary">Add an activity</button>
-                <button type="Delete" class="btn btn-danger">Delete an activity</button>
+                
             </div>
         </form>
     </div>

@@ -13,7 +13,7 @@ module.exports = function(sequelize, DataTypes) {
         url: {
             type: DataTypes.TEXT,
         },
-        field_trips:{
+        field_trip:{
             type:DataTypes.BOOLEAN,
         }
 
