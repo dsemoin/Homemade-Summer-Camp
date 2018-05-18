@@ -16,18 +16,16 @@ userIdToAll = "/?user_id=" + userId;
 
 
 $.get("/api/task" + userIdToAll, function(data) {
-  console.log(data);
+  console.log(data.length);
 
-  for(var i=0;i<data.length;i++){
-var fecha=moment(data[i].date_at).format("YYYY-MM-DD");
-// console.log(data[i].date_at);
-console.log(fecha);
+  for(var i=0; i < data.length ; i++){
+ var fecha=moment(data[i].date_at).format("YYYY-MM-DD");
 
   var inputName = data[i].title;
   var inputDate = fecha;
   var inputNotes = data[i].description;
   var inputTag = data[i].event;
-
+taskId=data[i].id;
   dataCel.each(function() {
   
     if ($(this).data("day") === inputDate) {
@@ -185,6 +183,7 @@ dataCel.each(function() {
 });
 
 }
+location.reload();
   winCreator.removeClass("isVisible");
   $("body").removeClass("overlay");
   $("#addEvent")[0].reset();
@@ -192,10 +191,8 @@ dataCel.each(function() {
 
 function completeForm(result){
   
-  console.log(result.date_at);
-  
   $("input[name=name]").val(result.title);
-  $("input[name=date]").val(moment(result.date_at).format("yyyy-MM-dd"));
+  $("input[name=date]").val(moment(result.date_at).format("YYYY-MM-DD"));
   $("textarea[name=notes]").val(result.description);
   $("select[name=tags]").append(result.event);
 
@@ -209,7 +206,7 @@ function getTaskData(id) {
     type:"GET",
   }).then(function(result) {
     if (result) {
-     
+     console.log(result);
     completeForm(result);
     userId=result.UserId;  
        taskId = result.id;
@@ -259,7 +256,10 @@ function deleteTask(id){
 
 //fill sidebar event info
 function fillEventSidebar(self) {
-   var thisName = self.attr("data-name");
+  //debugger;
+  var selfId=self.id;
+  console.log("este es self:"+selfId);
+  var thisName = self.attr("data-name");
   var thisImportant = self.hasClass("event--important");
   var thisBirthday = self.hasClass("event--birthday");
   var thisFestivity = self.hasClass("event--festivity");
