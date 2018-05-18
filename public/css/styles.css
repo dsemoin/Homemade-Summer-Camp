@@ -13,6 +13,18 @@ body {
   background-color: #f5f5f5;
 }
 
+nav{
+  font-size: 18px;
+}
+
+#signUp{
+  font-size: 18px;
+}
+
+h5{
+  font-size: 22px;
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;
@@ -49,4 +61,10 @@ body {
 
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+}
+
+h1{
+  color: lightblue !important;
+  font-family: fantasy !important;
+  text-align: center!important
 }

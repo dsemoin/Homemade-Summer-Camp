@@ -11,38 +11,38 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 
- 
+  <!-- Font Awesome Glyphicons -->
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
    
    {{!-- Calendar --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css'>
-    <script src="/js/calendar.js"></script>
-    <link rel="stylesheet" href="/css/calendar.css">
-    <!-- Chosen -->
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script> --}}
-    {{!-- Styles --}}
-     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- reference Moment.js library -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     
-     {{!-- js files --}}
-     <script src="/js/login.js"></script>
+    {{!-- Styles --}}
+    <link rel="stylesheet" href="/css/styles.css">
+    
+    {{!-- js files --}}
+    <script src="/js/login.js"></script>
+  
     
 </head>
 <body>
-
+<div class="overlay"></div>
+<div class="content">
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
       <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="/">Home</a>
-        <a class="p-2 text-dark" href="/login">Login</a>
-        <a class="p-2 text-dark" href="/register">Register</a>
-        <a class="p-2 text-dark" href="/calendar">Calendar</a>
-         <a class="p-2 text-dark" href="/calendar">Library</a>
+        <a class="p-2 text-dark" id="navLogin" href="/login">Login</a>
+        <a class="p-2 text-dark" id="navRegister" href="/register">Register</a>
+        <a class="p-2 text-dark" id="navCalendar" href="/calendar">Calendar</a>
+        <a class="p-2 text-dark" id="navLibrary" href="/calendar">Library</a>
       </nav>
-      <a class="btn btn-outline-primary" href="#">Sign up</a>
+      <a class="btn btn-outline-primary" id="signUp" href="#">Sign up</a>
     </div>
-
-   
-
     <div class="container">
       {{{body}}}
 
@@ -51,7 +51,7 @@
       </footer>
     </div>
 
-
+</div>
    
   </body>
 </html>

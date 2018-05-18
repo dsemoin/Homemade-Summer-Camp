@@ -26,7 +26,7 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 require("./routes/html-routes.js")(app);
 require("./routes/login-routes.js")(app);
-//require("./routes/register-routes.js")(app);
+require("./routes/task.js")(app);
 
 
 
