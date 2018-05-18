@@ -11,12 +11,40 @@ var taskId;
 userId = url.split("=")[1];
 console.log(userId);
 
-if (userId) {
-  userIdToAll = "/?user_id=" + userId;
-}
+
+userIdToAll = "/?user_id=" + userId;
+
 
 $.get("/api/task" + userIdToAll, function(data) {
   console.log(data);
+
+  for(var i=0;i<data.length;i++){
+var fecha=moment(data[i].date_at).format("YYYY-MM-DD");
+// console.log(data[i].date_at);
+console.log(fecha);
+
+  var inputName = data[i].title;
+  var inputDate = fecha;
+  var inputNotes = data[i].description;
+  var inputTag = data[i].event;
+
+  dataCel.each(function() {
+  
+    if ($(this).data("day") === inputDate) {
+      if (inputName != null) {
+        $(this).attr("data-name", inputName);
+      }
+      if (inputNotes != null) {
+        $(this).attr("data-notes", inputNotes);
+      }
+      $(this).addClass("event");
+      if (inputTag != null) {
+        $(this).addClass("event--" + inputTag);
+      }
+      fillEventSidebar($(this));
+    }
+  });
+}
 });
 
 
@@ -136,7 +164,7 @@ saveBtn.on("click", function() {
 
   console.log("el entrado:"+data);
   taskId=data.id;
- 
+ debugger;
 dataCel.each(function() {
   
     if ($(this).data("day") === inputDate) {
