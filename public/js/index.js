@@ -102,6 +102,7 @@ dataCel.each(function() {
 
 //window event creator
 addBtn.on("click", function() {
+  $("#addEvent")[0].reset();
   winCreator.addClass("isVisible");
  $(".overlay").css("visibility", "visible");
   dataCel.each(function() {
@@ -121,6 +122,7 @@ closeBtn.on("click", function() {
 
 saveBtn.on("click", function() {
 
+  
    $(".overlay").css("visibility", "hidden");  
   var inputName = $("input[name=name]").val();
   var inputDate = $("input[name=date]").val();
