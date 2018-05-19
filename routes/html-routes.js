@@ -17,16 +17,5 @@ module.exports = function(app) {
     app.get('/calendar', function(req, res){
     	res.render('calendar');
     });
-
-    app.get('/library', function(req, res){
-    	res.render('library');
-    });
-
-    // app.get('/map', function(req, res){
-    // 	res.render('map');
-    // });
-
-   
-
-
+  
 }

@@ -5,7 +5,6 @@ body {
 
 body {
   display: -ms-flexbox;
-  
   -ms-flex-align: center;
   align-items: center;
   padding-top: 40px;
@@ -33,9 +32,11 @@ h5{
   margin: auto;
   margin-top: 150px;
 }
+
 .form-signin .checkbox {
   font-weight: 400;
 }
+
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -43,14 +44,17 @@ h5{
   padding: 10px;
   font-size: 16px;
 }
+
 .form-signin .form-control:focus {
   z-index: 2;
 }
+
 .form-signin input[type="email"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
+
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
@@ -79,3 +83,65 @@ color: white!important
 nav a:hover{
  text-decoration: none
 }
+
+.library {
+ background-color: #003567;
+ text-align: center;
+ color: white;
+}
+
+.add {
+ /* margin:10px; */
+ padding: 15px;
+ border: 1px solid black;
+ background-color: #003567;
+ color: white;
+ margin-top: 5px;
+}
+
+.todo {
+ border: 1px solid black;
+}
+
+.activities{
+ border: 1px solid black;
+ padding: 28px;
+ max-height: 400px;
+ width: 100%;
+ overflow: scroll;
+ background-color: #003567;
+ color: white;
+}
+
+.lessons {
+ border: 1px solid black;
+ padding: 28px;
+ max-height: 400px;
+ min-height: 400px;
+ width: 100%;
+ overflow: scroll;
+ background-color: #003567;
+ color: white;
+}
+
+#ft {
+ text-align: left;
+}
+
+.tag {
+ padding: 5px;
+}
+.delete{
+ display: inline;
+}
+
+.delete-button {
+ background-color: #000000;
+ color: #FFFFFF;
+ border-radius: 10px;
+ -moz-border-radius: 10px;
+ -webkit-border-radius: 10px;
+ margin:5px;
+}
+
+

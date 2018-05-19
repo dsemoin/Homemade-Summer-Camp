@@ -1,1 +1,94 @@
-library
+
+{{!-- Library header --}}
+<div class="row library">
+    <div class="col" id="library">
+        <h1>Library</h1>
+        <h4>List of Activities and Lessons</h4>
+    </div>
+</div>
+{{!-- Divide page into two rows/row 1 --}}
+<div class="row todo">
+    <div class="col learning">
+        {{!-- Learning activities colums--}}
+        <h1>Learning</h1>
+        <div class="row">
+            <div class="lessons">
+                <ul>
+                    {{!-- get array for each item in library --}} {{#each lessons}}
+                    <li>
+                        <a href="{{url}}">
+                            {{title}}
+                        </a>
+                         <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-light delete-button">x</button>
+                        </form>
+                    </li>
+                    {{/each}}
+                </ul>
+
+                {{!--
+                <p>Amazon has some great content to teach kids a new language.</p> --}}
+
+            </div>
+        </div>
+    </div>
+    {{!-- Field trips column --}}
+    <div class="col trips">
+        <h1 id="ft">Field Trips</h1>
+        <div class="row">
+            <div class="activities">
+                <ul>
+                    {{!-- get array for each item in library --}} {{#each fieldTrips}}
+                    <li>
+                        <a href="{{url}}">
+                            {{title}}
+                        </a>
+                         <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-light  delete-button">x</button>
+                        </form>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Divide page into two rows/row 2 --}}
+<div class="row add">
+    <div class="col lesson">
+        <h4>Add a lesson</h4>
+        <form class="create-form" id="add_lesson" action="/api/library" method="POST">
+            {{!-- // This is added to add lessons --}}
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+                <label for="ca">Topic:</label>
+                <input type="text" id="ca" name="title">
+                <label for="url">Website:</label>
+                <input type="text" id="url" name="url">
+                <input type="hidden" name="field_trip" value="false">
+                <button type="submit" class="btn btn-primary">Add a lesson</button>
+               
+            </div>
+        </form>
+    </div>
+
+    {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
+    <div class="col activity">
+        {{!-- Add an activity --}}
+        <h4>Add an Activity</h4>
+        <form class="create-form" id="add_activity" action="/api/library" method="POST">
+            {{!-- // This is to add activities --}}
+            <input type="hidden" name="_method" value="POST">
+            <div class="form-group">
+                <label for="ca">Activity:</label>
+                <input type="text" id="ca" name="title">
+                <label for="url">Website:</label>
+                <input type="text" id="url" name="url">
+                <input type="hidden" name="field_trip" value="true">
+                <button type="submit" class="btn btn-primary">Add an activity</button>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
