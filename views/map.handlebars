@@ -1,0 +1,74 @@
+
+<script>
+    function initMap(){
+      // Map options
+      var options = {
+        zoom:8,
+        center:{lat:25.761680,lng:-80.191790}
+      }
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        addMarker({coords:event.latLng});
+      });
+    
+    
+      // Array of markers
+      var markers = [
+          {
+              coords:{lat:26.714733,lng:-80.187942},
+              content:'<h1>Frost Science Museum: WEEK 1 </h1>'
+          },
+          {
+            coords:{lat:225.785536,lng:-80.320099},
+            content:'<h1>Lion Country Safari: WEEK 2 </h1>'
+          },
+          {
+              coords:{lat:26.120718,lng:-80.148005},
+              content:'<h1>Museum of Science and Discovery: WEEK 3</h1>'
+          },
+          {
+              coords:{lat:25.783875,lng:-80.173820},
+              content:'<h1>Japanese Botanical Garden: WEEK 4</h1>'
+          }
+      ];
+      // Loop through markers
+      for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+        // Check for customicon
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+        // Check content
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+  <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFEQiQc8aKQCryUl8OUnb8gIYXXhgtdHU&callback=initMap">
+  </script>
+
+
+
+<div id="map">cfcffx</div>
+
+

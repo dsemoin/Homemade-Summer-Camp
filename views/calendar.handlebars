@@ -33,7 +33,7 @@ function fill_table(month, month_length, indexMonth) {
     // fill the first week of days
     for (var i = start_day; i < 8; i++) {
       document.write(
-        "<div data-day='2017-" +
+        "<div data-day='2018-" +
           indexMonth +
           "-0" +
           day +
@@ -51,7 +51,7 @@ function fill_table(month, month_length, indexMonth) {
       for (var i = 1; i <= 7 && day <= month_length; i++) {
         if (day >= 1 && day <= 9) {
           document.write(
-            "<div data-day='2017-" +
+            "<div data-day='2018-" +
               indexMonth +
               "-0" +
               day +
@@ -62,7 +62,7 @@ function fill_table(month, month_length, indexMonth) {
           day++;
         } else {
           document.write(
-            "<div data-day='2017-" +
+            "<div data-day='2018-" +
               indexMonth +
               "-" +
               day +
@@ -81,10 +81,7 @@ function fill_table(month, month_length, indexMonth) {
     document.write("</div>");
   }
 </script>
-
-{{!-- calendar --}}
-
-<header class="body-calendar">
+<header>
   <div class="wrapper">
     <div class="c-monthyear">
     <div class="c-month">
@@ -105,17 +102,17 @@ function fill_table(month, month_length, indexMonth) {
         </div>
         <span id="next" class="next fa fa-angle-right" aria-hidden="true"></span>
       </div>
-      <span class="c-paginator__year">2017</span>
+      <span class="c-paginator__year">2018</span>
     </div>
     <div class="c-sort">
-      <a class="o-btn c-today__btn" href="#" onclick="TODAY()">TODAY</a>
+      <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
     </div>
   </div>
 </header>
-<div class="wrapper body-calendar">
+<div class="wrapper">
   <div class="c-calendar">
     <div class="c-calendar__style c-aside">
-      <a class="c-add o-btn" href="#" data-toggle="modal" data-target="#exampleModal">add event <span class="fa fa-plus"></span></a>
+      <a class="c-add o-btn js-event__add" href="javascript:;">add event <span class="fa fa-plus"></span></a>
       <div class="c-aside__day">
         <span class="c-aside__num"></span> <span class="c-aside__month"></span>
       </div>
@@ -126,8 +123,7 @@ function fill_table(month, month_length, indexMonth) {
       <script>
       
       // CAHNGE the below variable to the CURRENT YEAR
-      year = (new Date()).getFullYear();
-      console.log(year);
+      year = 2018;
 
       // first day of the week of the new year
       today = new Date("January 1, " + year);
@@ -148,21 +144,13 @@ function fill_table(month, month_length, indexMonth) {
     </div>
   </div>
 
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <a href="#" class="o-btn" data-dismiss="modal">CLOSE <span class="fa fa-close"></span></a>
-      </div>
-      <div class="modal-body">
-        <div class="c-calendar__style">
-    
-     <form id="addEvent">
-      <input placeholder="Event name" type="text" name="name">
-      <input type="date" name="date">
-      <textarea placeholder="Notes" name="notes" cols="30" rows="10"></textarea>
-      <select name="tags">
+  <div class="c-event__creator c-calendar__style js-event__creator">
+    <a href="javascript:;" class="o-btn js-event__close">CLOSE <span class="fa fa-close"></span></a>
+    <form id="addEvent">
+      <input placeholder="Event name" type="text" id="name" name="name">
+      <input type="date" id="date" name="date">
+      <textarea placeholder="Notes" name="notes" id="notes" cols="30" rows="10"></textarea>
+      <select name="tags" id="tags">
           <option value="event">event</option>
           <option value="important">important</option>
           <option value="birthday">birthday</option>
@@ -170,12 +158,12 @@ function fill_table(month, month_length, indexMonth) {
         </select>
     </form>
     <br>
-    <a href="#" class="o-btn js-event__save"  data-dismiss="modal">SAVE <span class="fa fa-save"></span></a>
+    <a href="javascript:;" class="o-btn js-event__save">SAVE <span class="fa fa-save"></span></a>
   </div>
-      </div>
-     </div>
-  </div>
+  
 </div>
-</div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle2/2.1.6/jquery.cycle2.core.min.js'></script>
 
-{{!-- end calendar --}}
+{{!-- <script src="/js/cms.js"></script> --}}
+<script  src="/js/index.js"></script>

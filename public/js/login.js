@@ -1,5 +1,7 @@
 $(function() {
 
+
+//function login
  $(".login").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -8,22 +10,25 @@ $(function() {
 		 email:$("#inputEmail").val().trim(),
 		password:$("#inputPassword").val().trim(),
 	}
-				
-
 		$.post("/api/login", userN).then(function(data){
 			if(data==null){
-		    alert("Incorrect credentials.");
+			alert("Incorrect credentials or your need to create an new user!");
+			$("#inputPassword").val("");
 		}
 		else{
+			$.ajax("/api/email/"+ userN.email, {
+				type:"GET"
+			}).then(function(data){
+			$("#navCalendar").attr("href","/calendar?user_id="+data.id);
 			$("#inputEmail").val("");
-            $("#inputPassword").val("");
-			window.location.href = "/calendar";
+			$("#inputPassword").val("");
+		});
 		}
 		
 	});
 });
 
- 
+ //funtion register
  $(".register").on("submit", function(event) {
  // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -42,9 +47,9 @@ $(function() {
 			console.log(data);
 			if(data==null){
 				 $.post("/api/user",newUser).then(function(data){
-        		 console.log("created new user");
-                // Reload the page to get the updated list
-                window.location.href = "/calendar";
+				 console.log("created new user: "+ data);
+				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
+                // window.location.href = "/calendar";
       		  });
 			}
 			else{
@@ -55,6 +60,11 @@ $(function() {
 		$("#inputName").val("");
 		$("#inputEmail").val("");
         $("#inputPassword").val("");
-      });
+	  });
+	  
+	  $("#signUp").on("click", function(event){
+		event.preventDefault();
+		window.location.href = "/";
+	  })
 
 });

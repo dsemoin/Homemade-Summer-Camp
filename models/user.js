@@ -49,29 +49,7 @@ module.exports = function(sequelize, DataTypes) {
         });
 });
 
-    // var hasSecurePassword = function(user, options, callback) {
-
-    // if (user.password != user.password_confirmation) {
-    //     throw new Error("Password confirmation doesn't match Password");
-    // }
-
-    // var salt = bcrypt.genSaltSync(saltRounds);
-    // var hash = bcrypt.hashSync(myPlaintextPassword, salt);
-    
-    // user.set('password_digest', hash);
-        
-    // };
-
-
-    // User.beforeCreate(function(user, options, callback) {
-    //     user.email = user.email.toLowerCase();
-    //     if (user.password)
-    //         hasSecurePassword(user, options, callback);
-    //     else
-    //         return callback(null, options);
-    // });
-
-    User.associate = function(models) {
+     User.associate = function(models) {
 
         User.hasMany(models.Task, {
             onDelete: "cascade"

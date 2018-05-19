@@ -13,14 +13,13 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        hour_at: {
-            type: DataTypes.TIME,
-
-        },
-        description: {
+       description: {
             type: DataTypes.TEXT,
 
-        }
+        },
+        event:{
+            type:DataTypes.STRING,
+          }
 
     });
 
