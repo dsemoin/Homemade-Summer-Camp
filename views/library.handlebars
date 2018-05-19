@@ -18,8 +18,8 @@
                         <a href="{{url}}">
                             {{title}}
                         </a>
-                         <form action="/api/library/{{id}}" method="POST">
-                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                         <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-light delete-button">x</button>
                         </form>
                     </li>
                     {{/each}}
@@ -42,8 +42,8 @@
                         <a href="{{url}}">
                             {{title}}
                         </a>
-                         <form action="/api/library/{{id}}" method="POST">
-                            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+                         <form class="delete" action="/api/library/{{id}}" method="POST">
+                            <button type="submit" class="btn btn-sm btn-light  delete-button">x</button>
                         </form>
                     </li>
                     {{/each}}
