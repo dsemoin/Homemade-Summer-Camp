@@ -23,7 +23,7 @@ $(function() {
 				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
 				$("#inputEmail").val("");
 				$("#inputPassword").val("");
-				window.location.href = "/";
+				window.location.href = "/calendar?user_id=" + data.id;
 			});
 		}
 		
@@ -51,7 +51,7 @@ $(function() {
 				 $.post("/api/user",newUser).then(function(data){
 				 console.log("created new user: "+ data);
 				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
-                window.location.href = "/calendar";
+                window.location.href = "/calendar?user_id=" + data.id;
       		  });
 			}
 			else{
