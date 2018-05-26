@@ -10,7 +10,11 @@ var updating = false;
 var taskId; 
 userId = url.split("=")[1];
 if (userId) {
+  $("#navHome").attr("href","/?user_id=" + userId);
+  $("#navLogin").attr("href","/login?user_id=" + userId);
+  $("#navRegister").attr("href","/register?user_id=" + userId);
   $("#navCalendar").attr("href","/calendar?user_id=" + userId);
+  $("#navLibrary").attr("href","/library?user_id=" + userId);
 }
 console.log(userId);
 
