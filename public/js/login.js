@@ -23,6 +23,7 @@ $(function() {
 				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
 				$("#inputEmail").val("");
 				$("#inputPassword").val("");
+				// added redirect to calendar after login or registration.
 				window.location.href = "/calendar?user_id=" + data.id;
 			});
 		}

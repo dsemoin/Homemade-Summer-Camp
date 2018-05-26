@@ -9,7 +9,7 @@ var updating = false;
 //var to get the id to delete, update and open 
 var taskId; 
 userId = url.split("=")[1];
-console.log("UserId: ", userId);
+// added userID to all links so user info can show up on all pages.
 if (userId) {
   $("#navHome").attr("href","/?user_id=" + userId);
   $("#navLogin").attr("href","/login?user_id=" + userId);
