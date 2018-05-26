@@ -24,7 +24,6 @@ if (emailB=="" || passwordB=="") {
          if(bcrypt.compareSync(passwordB, dbUser.password))
          {
           res.send('correct credentials.');
-           console.log(bcrypt.compareSync(passwordB, dbUser.password));
         }
       }
       
@@ -39,11 +38,11 @@ if (emailB=="" || passwordB=="") {
 app.get("/api/email/:email", function(req, res){
   db.User.findOne({
     where:{
-      email:req.params.email
+      email: req.params.email
     },
     include:[db.Task]
   }).then(function(dbUser){
-        res.json(dbUser);
+      res.json(dbUser);
    });
 });
 

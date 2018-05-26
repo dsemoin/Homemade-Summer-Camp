@@ -19,16 +19,18 @@ $(function() {
 			$.ajax("/api/email/"+ userN.email, {
 				type:"GET"
 			}).then(function(data){
-			$("#navCalendar").attr("href","/calendar?user_id="+data.id);
-			$("#inputEmail").val("");
-			$("#inputPassword").val("");
-		});
+				console.log("Data: ", data);
+				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
+				$("#inputEmail").val("");
+				$("#inputPassword").val("");
+				window.location.href = "/";
+			});
 		}
 		
 	});
 });
 
- //funtion register
+ //function register
  $(".register").on("submit", function(event) {
  // Make sure to preventDefault on a submit event.
         event.preventDefault();
@@ -49,7 +51,7 @@ $(function() {
 				 $.post("/api/user",newUser).then(function(data){
 				 console.log("created new user: "+ data);
 				$("#navCalendar").attr("href","/calendar?user_id="+data.id);
-                // window.location.href = "/calendar";
+                window.location.href = "/calendar";
       		  });
 			}
 			else{
@@ -59,7 +61,7 @@ $(function() {
 
 		$("#inputName").val("");
 		$("#inputEmail").val("");
-        $("#inputPassword").val("");
+		$("#inputPassword").val("");
 	  });
 	  
 	  $("#signUp").on("click", function(event){
