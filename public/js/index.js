@@ -9,6 +9,9 @@ var updating = false;
 //var to get the id to delete, update and open 
 var taskId; 
 userId = url.split("=")[1];
+if (userId) {
+  $("#navCalendar").attr("href","/calendar?user_id=" + userId);
+}
 console.log(userId);
 
 
